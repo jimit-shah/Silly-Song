@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le3-26-8w0">
+                                <rect key="frame" x="67" y="27" width="241" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="fQW-gZ-n8a"/>
+                                    <constraint firstAttribute="height" constant="116" id="qv5-Jd-ItH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="57"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-X2-iec">
+                                <rect key="frame" x="11" y="145" width="353" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="dwz-id-tKJ"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="MBE-ib-hqH"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YO7-MZ-rzI">
+                                <rect key="frame" x="11" y="195" width="353" height="464"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.024609374999999999" green="0.78833705357142858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="le3-26-8w0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0A2-1I-bey"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhg-X2-iec" secondAttribute="trailing" constant="-5" id="0zm-dW-zpN"/>
+                            <constraint firstItem="le3-26-8w0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="7" id="8Uc-XY-eCs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YO7-MZ-rzI" secondAttribute="bottom" constant="8" symbolic="YES" id="cRg-eg-mJ0"/>
+                            <constraint firstItem="YO7-MZ-rzI" firstAttribute="leading" secondItem="dhg-X2-iec" secondAttribute="leading" id="ctH-pY-ovs"/>
+                            <constraint firstItem="YO7-MZ-rzI" firstAttribute="centerX" secondItem="dhg-X2-iec" secondAttribute="centerX" id="dv5-K0-7HW"/>
+                            <constraint firstItem="YO7-MZ-rzI" firstAttribute="centerX" secondItem="dhg-X2-iec" secondAttribute="centerX" id="gLJ-OD-696"/>
+                            <constraint firstItem="dhg-X2-iec" firstAttribute="top" secondItem="le3-26-8w0" secondAttribute="bottom" constant="2" id="iuA-r5-hvg"/>
+                            <constraint firstItem="dhg-X2-iec" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="tDh-25-AeE"/>
+                            <constraint firstItem="YO7-MZ-rzI" firstAttribute="top" secondItem="dhg-X2-iec" secondAttribute="bottom" constant="20" id="uQj-wX-cVS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="YO7-MZ-rzI" id="9zO-ij-QEG"/>
+                        <outlet property="nameField" destination="dhg-X2-iec" id="xKJ-DN-gAA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="355.98591549295776" y="140.625"/>
         </scene>
     </scenes>
 </document>
